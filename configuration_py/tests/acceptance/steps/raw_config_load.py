@@ -28,7 +28,7 @@ def step_impl(context, config_file, folder):
 
 @step('environment set to "{environment}"')
 def step_impl(context, environment):
-    os.putenv('ENVIRONMENT', environment)
+    os.environ['ENVIRONMENT'] = environment
 
 
 @when('we load default config from folder "{folder}"')

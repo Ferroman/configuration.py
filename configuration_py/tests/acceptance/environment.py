@@ -10,6 +10,8 @@ def before_scenario(context, scenario):
 
     context.TMP_FOLDER = TMP_FOLDER
 
+    os.environ['ENV'] = os.environ['ENVIRONMENT'] = ''
+
 
 def after_scenario(context, scenario):
     shutil.rmtree(TMP_FOLDER)
