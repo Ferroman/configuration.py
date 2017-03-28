@@ -1,0 +1,4 @@
+test:
+  override:
+    - python setup.py nosetests --with-xunit --with-coverage --cover-package=configuration_py
+    - python setup.py behave_test
