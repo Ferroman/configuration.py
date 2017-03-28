@@ -110,7 +110,6 @@ def _load_config_from_file(path_to_config_file, context):
 
     for extension in extensions:
         handler = get_handler(extension)
-        print handler
         content = handler.parse(content, context)
 
     return content

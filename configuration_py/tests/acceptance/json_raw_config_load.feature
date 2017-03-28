@@ -1,14 +1,17 @@
 Feature: Loading config from raw YAML file
-  In order to use YAML configs in my application,
+  In order to use JSON configs in my application,
   As developer
   I want to load config for current environment
-  from raw YAML files
+  from raw JSON files
 
   Scenario: load raw config by using default config name
     Given we have "application.json" config in "config" folder with the content:
       """
-      development:
-        debug: True
+      {
+      'development':{
+          'debug': true
+        }
+      }
       """
       And environment set to "development"
     When we load default config from folder "config"
@@ -18,8 +21,11 @@ Feature: Loading config from raw YAML file
   Scenario: load raw config by using custom config name
     Given we have "database.json" config in "config" folder with the content:
       """
-      development:
-        host: local
+      {
+      'development':{
+          'debug': true
+        }
+      }
       """
       And environment set to "development"
     When we load "database" config from folder "config"
@@ -28,10 +34,14 @@ Feature: Loading config from raw YAML file
   Scenario: load raw config for the different environments
     Given we have "application.json" config in "config" folder with the content:
       """
-      development:
-        debug: True
-      test:
-        debug: True
+      {
+      'development':{
+          'debug': true
+        },
+      'test':{
+          'debug': true
+        }
+      }
       """
     When environment set to "development"
      And we load "application" config from folder "config"
@@ -43,10 +53,14 @@ Feature: Loading config from raw YAML file
   Scenario: load raw config for the different environments passed by code
     Given we have "application.json" config in "config" folder with the content:
       """
-      development:
-        debug: True
-      test:
-        debug: True
+      {
+      'development':{
+          'debug': true
+        },
+      'test':{
+          'debug': true
+        }
+      }
       """
     When we load "application" config from folder "config" with "development" environment
     Then "development" configuration loaded
