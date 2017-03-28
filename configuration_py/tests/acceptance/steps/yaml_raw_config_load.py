@@ -4,16 +4,7 @@ from behave import *
 import sure
 
 import configuration_py
-
-
-def get_config_folder_path(context, folder):
-    return os.path.join(context.TMP_FOLDER, folder)
-
-
-def create_config_folder(context, folder):
-    config_folder_path = get_config_folder_path(context, folder)
-    os.makedirs(config_folder_path)
-    return config_folder_path
+from configuration_py.tests.steps_utils import create_config_folder, get_config_folder_path
 
 
 @given('we have "{config_file}" config in "{folder}" folder with the content')
@@ -50,3 +41,8 @@ def step_impl(context, environment):
 def step_impl(context, config_name, folder, environment):
     context.app_config = configuration_py.load(config_name, environment=environment,
                                                folder=get_config_folder_path(context, folder))
+
+
+@step("it should looks like dictionary")
+def step_impl(context):
+    context.app_config.should.be.a('dict')

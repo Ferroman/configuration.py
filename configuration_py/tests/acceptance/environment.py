@@ -1,7 +1,11 @@
 import os
+import sys
 import shutil
 
 TMP_FOLDER = 'tmp'
+
+
+sys.dont_write_bytecode = True
 
 
 def before_scenario(context, scenario):

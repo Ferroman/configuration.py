@@ -12,7 +12,8 @@ Feature: Loading config from raw YAML file
       """
       And environment set to "development"
     When we load default config from folder "config"
-    Then "development" configuration loaded
+    Then it should looks like dictionary
+      And "development" configuration loaded
 
   Scenario: load raw config by using custom config name
     Given we have "database.yaml" config in "config" folder with the content:
@@ -71,3 +72,14 @@ Feature: Loading config from raw YAML file
     Then "development" configuration loaded
     When we load "application" config from folder "config" with "test" environment
     Then "test" configuration loaded
+
+  Scenario: load raw config by the full file name
+    Given we have "application.yaml" config in "config" folder with the content:
+    """
+    development:
+      debug: True
+    test:
+      debug: True
+    """
+    When we load "application.yaml" config from folder "config" with "development" environment
+    Then "development" configuration loaded
