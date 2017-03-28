@@ -8,6 +8,7 @@ setup(name='configuration.py',
       author_email='bfrankovskyi@gmail.com',
       license='MIT',
       packages=['configuration_py'],
+      install_requires=['pyyaml',],
       test_suite='nose.collector',
       tests_require=['behave', 'sure', 'nose', 'mock'],
       zip_safe=False)
