@@ -1,5 +1,7 @@
 from setuptools import setup
 
+
+
 setup(name='configuration.py',
       version='0.1',
       description='Easy config management for python applications',
@@ -10,5 +12,5 @@ setup(name='configuration.py',
       packages=['configuration_py'],
       install_requires=['pyyaml',],
       test_suite='nose.collector',
-      tests_require=['behave', 'sure', 'nose', 'mock', 'coverage'],
+      tests_require=['sure', 'nose', 'mock', 'coverage'],
       zip_safe=False)

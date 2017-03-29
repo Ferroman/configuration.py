@@ -1,3 +1,7 @@
+dependencies:
+  pre:
+    - pip install behave
+
 test:
   override:
     - python setup.py nosetests --with-xunit --with-coverage --cover-package=configuration_py
