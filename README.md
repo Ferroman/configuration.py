@@ -1,8 +1,9 @@
 # configuration.py: easy and flexible configuration management for python applications
 
 Configuration.py is a library for configuration management in python apps. Its goal is to make configurations management
-as human-friendly as possible. It provides a simple `load` function that allows to load configuration from any supported formats.
-Configuration.py can be used to organize configs for any python applications. Better taste with [dotenv](https://github.com/theskumar/python-dotenv). 
+as human-friendly as possible. It provides a simple `load` function that allows to load configuration for given environment 
+from any supported formats.
+Configuration.py can be used to organize configs for any python applications. Taste better with [dotenv](https://github.com/theskumar/python-dotenv). 
 
 ## Installation
 
@@ -272,4 +273,4 @@ To run tests install all of this tools and use appropriate CLI:
 
 ## License
 
-MIT © Bogdan Frankovskyi
+[MIT](https://github.com/Ferroman/configuration.py/blob/master/LICENSE) © Bogdan Frankovskyi
