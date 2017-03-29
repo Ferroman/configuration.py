@@ -4,7 +4,7 @@ Feature: Loading config from raw YAML file
   I want to load config for current environment
   from raw YAML files
 
-  Scenario: load raw config by using default config name
+  Scenario: Load config by using default config name
     Given we have "application.yaml" config in "config" folder with the content:
       """
       development:
@@ -15,7 +15,7 @@ Feature: Loading config from raw YAML file
     Then it should looks like dictionary
       And "development" configuration loaded
 
-  Scenario: load raw config by using custom config name
+  Scenario: Load config by using custom config name
     Given we have "database.yaml" config in "config" folder with the content:
       """
       development:
@@ -25,7 +25,7 @@ Feature: Loading config from raw YAML file
     When we load "database" config from folder "config"
     Then "development" configuration loaded
 
-  Scenario: load raw config by using config name with the short extension
+  Scenario: Load config by using config name with the short extension
     Given we have "database.yml" config in "config" folder with the content:
       """
       development:
@@ -35,7 +35,7 @@ Feature: Loading config from raw YAML file
     When we load "database" config from folder "config"
     Then "development" configuration loaded
 
-  Scenario: load raw config from the custom config folder
+  Scenario: Load config from the custom config folder
     Given we have "application.yaml" config in "custom" folder with the content:
       """
       development:
@@ -45,7 +45,7 @@ Feature: Loading config from raw YAML file
     When we load default config from folder "custom"
     Then "development" configuration loaded
 
-  Scenario: load raw config for the different environments
+  Scenario: Load config for the different environments
     Given we have "application.yaml" config in "config" folder with the content:
       """
       development:
@@ -60,7 +60,7 @@ Feature: Loading config from raw YAML file
       And we load "application" config from folder "config"
     Then "test" configuration loaded
 
-  Scenario: load raw config for the different environments passed by code
+  Scenario: Load config for the different environments passed by code
     Given we have "application.yaml" config in "config" folder with the content:
       """
       development:
@@ -74,7 +74,7 @@ Feature: Loading config from raw YAML file
     Then "test" configuration loaded
 
   @skip
-  Scenario: load raw config by the full file name
+  Scenario: Load config by the full file name
     Given we have "application.yaml" config in "config" folder with the content:
     """
     development:

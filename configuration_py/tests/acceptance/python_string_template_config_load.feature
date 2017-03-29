@@ -5,7 +5,7 @@ Feature: Loading config from yaml in python string template
   I want to load config for current environment
   from YAML files generated from python string templates
 
-  Scenario: load yaml config by using default config name
+  Scenario: Load templated yaml config by using default config name
     Given we have "application.yaml.tmpl" config in "config" folder with the content:
       """
       development:
@@ -16,7 +16,7 @@ Feature: Loading config from yaml in python string template
     Then "development" configuration loaded
     And it should looks like dictionary
 
-  Scenario: load yml config by using default config name
+  Scenario: Load templated yml config by using default config name
     Given we have "application.yml.tmpl" config in "config" folder with the content:
       """
       development:
@@ -26,7 +26,7 @@ Feature: Loading config from yaml in python string template
     When we load default config from folder "config"
     Then "development" configuration loaded
 
-  Scenario: load yaml config with passed variable into template
+  Scenario: Load templated yaml config with passed variable into template
     Given we have "application.yml.tmpl" config in "config" folder with the content:
       """
       development:

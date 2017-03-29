@@ -5,7 +5,7 @@ Feature: Loading config from raw JSON file
   I want to load config for current environment
   from raw JSON files
 
-  Scenario: load raw config by using default config name
+  Scenario: Load raw config by using default config name
     Given we have "application.json" config in "config" folder with the content:
       """
       {
@@ -19,7 +19,7 @@ Feature: Loading config from raw JSON file
     Then "development" configuration loaded
       And it should looks like dictionary
 
-  Scenario: load raw config by using custom config name
+  Scenario: Load raw config by using custom config name
     Given we have "database.json" config in "config" folder with the content:
       """
       {
@@ -32,7 +32,7 @@ Feature: Loading config from raw JSON file
     When we load "database" config from folder "config"
     Then "development" configuration loaded
 
-  Scenario: load raw config for the different environments
+  Scenario: Load raw config for the different environments
     Given we have "application.json" config in "config" folder with the content:
       """
       {
@@ -51,7 +51,7 @@ Feature: Loading config from raw JSON file
       And we load "application" config from folder "config"
     Then "test" configuration loaded
 
-  Scenario: load raw config for the different environments passed by code
+  Scenario: Load raw config for the different environments passed by code
     Given we have "application.json" config in "config" folder with the content:
       """
       {
