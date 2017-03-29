@@ -1,7 +1,6 @@
 import os
 
 import parser_lookup
-import template_processor_lookup
 
 DEFAULT_CONFIGS_FOLDER = './config'
 DEV_SHORTCUTS_LIST = ['dev']
@@ -9,13 +8,12 @@ PRODUCTION_SHORTCUTS_LIST = ['prod']
 
 
 def _generate_possible_config_file_names(config_name):
-    supported_parser_extensions = parser_lookup.get_supported_extensions()
-    supported_template_processor_extensions = template_processor_lookup.get_supported_extensions()
+    supported_parser_extensions = list(parser_lookup.get_supported_extensions())
 
     for config_extension in supported_parser_extensions:
         yield "{config_name}.{config_extension}".format(config_name=config_name, config_extension=config_extension)
 
-        for parser_extension in supported_template_processor_extensions:
+        for parser_extension in supported_parser_extensions:
             yield "{config_name}.{config_extension}.{parser_extension}"\
                 .format(config_name=config_name,
                         config_extension=config_extension,
@@ -95,12 +93,7 @@ def _get_available_config_environments_list(config):
 
 
 def get_handler(extension):
-    handler = parser_lookup.get_parser(extension)
-
-    if not handler:
-        return template_processor_lookup.get_template_processor(extension)
-
-    return handler
+    return parser_lookup.get_parser(extension)
 
 
 def _load_config_from_file(path_to_config_file, context):

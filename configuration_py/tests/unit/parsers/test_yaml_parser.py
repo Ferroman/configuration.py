@@ -6,7 +6,8 @@ from configuration_py.parsers.yaml_parser import YAMLParser
 class TestParseYAML(TestCase):
     def test_should_return_dict_of_parsed_yaml_content(self):
         content = """ development:
-                        variable: True"""
+                        variable: True
+                  """
         expected_result = {'development': {'variable': True}}
         actual_result = YAMLParser().parse(content)
         self.assertDictEqual(expected_result, actual_result)
