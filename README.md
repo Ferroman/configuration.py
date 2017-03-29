@@ -129,18 +129,22 @@ DATABASES = load('database')['databases']
 
 Middleware config:
 
+Loading config in code:
+
+```python
+from configuration_py import load
+...
+MIDDLEWARE_CLASSES = reduce(lambda x, item: x+item[1], sorted(load()['middleware'].items()), [])
+```
+
 This will add extra middleware on development:
 
 ```yaml
-default: 
-  middleware: &default
-    ? 'django.middleware.security.SecurityMiddleware'
-    ? 'django.contrib.sessions.middleware.SessionMiddleware'
-    ? 'django.middleware.common.CommonMiddleware'
-    ? 'django.middleware.csrf.CsrfViewMiddleware'
-    ? 'django.contrib.auth.middleware.AuthenticationMiddleware'
-    ? 'django.contrib.messages.middleware.MessageMiddleware'
-    ? 'django.middleware.clickjacking.XFrameOptionsMiddleware'
+default: &default
+  1:
+    - django.middleware.security.SecurityMiddleware
+    - django.contrib.sessions.middleware.SessionMiddleware
+    - django.middleware.common.CommonMiddleware
     
 production:
   middleware:
@@ -149,7 +153,8 @@ production:
 development:
   middleware:
     <<: *default
-    ? 'django_cprofile_middleware.middleware.ProfilerMiddleware'
+    2: 
+      - python.path.to.LoginRequiredMiddleware
 ```
 
 Split middlewares to insert additional middleware:
@@ -181,14 +186,6 @@ test:
     <<: *development
     4: 
       - python.path.to.LastMiddleware
-```
-
-Usage:
-
-```python
-from configuration_py import load
-...
-MIDDLEWARE_CLASSES = reduce(lambda x, item: x+item[1], sorted(load()['middleware'].items()), [])
 ```
 
 Middleware list will be loaded from configuration and merged in a right order:
