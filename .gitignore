@@ -27,6 +27,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+reports
 
 # Log files
 *.log

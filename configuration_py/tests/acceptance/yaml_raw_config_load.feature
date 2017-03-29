@@ -73,6 +73,7 @@ Feature: Loading config from raw YAML file
     When we load "application" config from folder "config" with "test" environment
     Then "test" configuration loaded
 
+  @skip
   Scenario: load raw config by the full file name
     Given we have "application.yaml" config in "config" folder with the content:
     """

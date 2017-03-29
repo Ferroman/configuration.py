@@ -1,4 +1,5 @@
-Feature: Loading config from raw YAML file
+@skip
+Feature: Loading config from raw JSON file
   In order to use JSON configs in my application,
   As developer
   I want to load config for current environment
