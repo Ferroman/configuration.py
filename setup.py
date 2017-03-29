@@ -12,5 +12,5 @@ setup(name='configuration.py',
       packages=['configuration_py'],
       install_requires=['pyyaml',],
       test_suite='nose.collector',
-      tests_require=['sure', 'nose', 'mock', 'coverage'],
+      tests_require=['nose', 'mock', 'coverage'],
       zip_safe=False)
