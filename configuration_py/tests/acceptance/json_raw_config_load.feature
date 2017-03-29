@@ -1,4 +1,3 @@
-@wip
 Feature: Loading config from raw JSON file
   In order to use JSON configs in my application,
   As developer
