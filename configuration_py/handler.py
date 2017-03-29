@@ -1,5 +1,0 @@
-from configuration_py.parser_lookup import get_parser
-from configuration_py.template_processor_lookup import get_template_processor
-
-
-

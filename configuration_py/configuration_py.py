@@ -119,6 +119,13 @@ def _load_config_by_name(configuration, config_folder, context):
 
 
 def load(configuration='application', environment=None, folder=None, context={}):
+    """
+    :param configuration: name of configuration file to load. Could use names without extensions
+    :param environment: environment, that should be load from config file. 'production', for example
+    :param folder: path string to directory with configs
+    :param context: dictionary that will be passed to template processor on config rendering
+    :return: dictionary with configuration
+    """
     config_folder = folder or DEFAULT_CONFIGS_FOLDER
 
     config = _load_config_by_name(configuration, config_folder, context)

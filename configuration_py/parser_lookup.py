@@ -19,10 +19,7 @@ def get_supported_extensions():
 def get_parser(extension):
     parser_class = _find_parser_class_by_extension(extension)
 
-    if parser_class:
-        return parser_class()
-
-    return None
+    return parser_class()
 
 
 def _find_parser_class_by_extension(extension):
@@ -32,8 +29,7 @@ def _find_parser_class_by_extension(extension):
         if extension in parser_class.extensions:
             return parser_class
 
-    return None
-    # raise EnvironmentError('No parsers for {extension} found'.format(extension=extension))
+    raise EnvironmentError('No parsers for {extension} found'.format(extension=extension))
 
 
 def _lookup_for_available_parsers():
