@@ -92,16 +92,21 @@ def _get_available_config_environments_list(config):
     return available_config_environments_list
 
 
+def _get_file_extensions(path_to_file):
+    file_name = os.path.basename(path_to_file)
+    return file_name.split('.')[1:]
+
+
 def get_handler(extension):
     return parser_lookup.get_parser(extension)
 
 
 def _load_config_from_file(path_to_config_file, context):
-    extensions = ['tmpl', 'yaml']
+    extensions = _get_file_extensions(path_to_config_file)
 
     content = _read_config_file(path_to_config_file)
 
-    for extension in extensions:
+    for extension in reversed(extensions):
         handler = get_handler(extension)
         content = handler.parse(content, context)
 
