@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def readme():
@@ -13,7 +13,7 @@ def readme():
     return description
 
 setup(name='configuration.py',
-      version='0.8.1',
+      version='0.8.2',
       description='Easy config management for python applications',
       long_description=readme(),
       classifiers=[
