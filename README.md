@@ -90,7 +90,9 @@ development:
 
 ### Django 
 
-Database config `config/database.yaml.tmpl`:
+#### Database 
+
+`config/application.yaml.tmpl`:
 
 ```yaml
 production:
@@ -125,10 +127,10 @@ In `settings.py`:
 ```python
 from configuration_py import load
 ...
-DATABASES = load('database')['databases']
+DATABASES = load()['databases']
 ```
 
-Middleware config:
+#### Middleware
 
 Loading config in code:
 
@@ -158,7 +160,7 @@ development:
       - python.path.to.LoginRequiredMiddleware
 ```
 
-Split middlewares to insert additional middleware:
+Split middleware list to insert additional middleware:
 
 ```yaml
 default: &default
@@ -217,6 +219,40 @@ Middleware list will be loaded from configuration and merged in a right order:
  'python.path.to.LastMiddleware']
 
 ```
+
+#### Caches
+
+`config/application.yaml.tmpl`:
+
+```yaml
+default:
+  cache: &default_cache
+    default: 
+      BACKEND: django.core.cache.backends.locmem.LocMemCache
+      
+production:
+  cache:
+    default: 
+      BACKEND: django.core.cache.backends.memcached.MemcachedCache
+    
+development:
+  cache:
+    <<: *default_cache
+  
+test:
+  cache:
+    <<: *default_cache
+```
+
+In `settings.py`:
+
+```python
+from configuration_py import load
+...
+CACHES = load()['cache']
+```
+
+
 ### SQLAlchemy 
 
 Configuration loading:
@@ -251,6 +287,39 @@ test:
 >>> engine = engine_from_config(**db_config['database'])
 ```
 
+### PyMongo
+
+> application.yaml.tmpl
+
+```yaml
+default: 
+  mongo: &default_mongo
+    host: 'localhost'
+    port: 27017
+ 
+production:
+  mongo: 
+    <<: *default_mongo
+    host: 'aws_mongo_host'
+    ssl: yes
+    
+development:
+  mongo:
+    <<: *default_mongo
+  
+test:
+  mongo:
+    <<: *default_mongo
+    port: 27027
+```
+
+```python
+>>> from pymongo import MongoClient
+>>> from configuration_py import load
+>>> client = MongoClient(**load()['mongo'])
+```
+
+
 ## Contributing
 
 Want to contribute? Great!
@@ -264,7 +333,8 @@ Want to contribute? Great!
 
 ## Testing
 
-Project has two kind of tests: unit tests and acceptance tests. To run unit tests project uses nose (with optional coverage) and for acceptance tests - behave and sure.
+Project has two kind of tests: unit tests and acceptance tests. 
+To run unit tests project uses [nose](http://nose.readthedocs.io/en/latest/) (with optional [coverage](https://coverage.readthedocs.io/en/coverage-4.3.4/#)) and for acceptance tests - [behave](https://pythonhosted.org/behave/behave.html) and [sure](https://sure.readthedocs.io/en/latest/).
 To run tests install all of this tools and use appropriate CLI:
 
 > nosetests --with-coverage --cover-package=configuration_py

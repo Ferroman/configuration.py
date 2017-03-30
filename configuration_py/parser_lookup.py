@@ -4,7 +4,7 @@ import pkgutil
 
 import sys
 
-from parsers.base_parser import BaseConfigParser
+from configuration_py.parsers.base_parser import BaseConfigParser
 
 PARSERS_DIR_NAME = 'parsers'
 
