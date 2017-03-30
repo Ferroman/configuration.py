@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from configuration_py.configuration_py import _read_config_file
+from configuration_py.configuration_load import _read_config_file
 from mock import patch, mock_open
 
 

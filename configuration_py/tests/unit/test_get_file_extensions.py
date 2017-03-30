@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from configuration_py.configuration_py import _get_file_extensions
+from configuration_py.configuration_load import _get_file_extensions
 
 
 class TestGetFileExtensions(TestCase):

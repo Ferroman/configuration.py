@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from configuration_py.configuration_py import _get_available_config_environments_list
+from configuration_py.configuration_load import _get_available_config_environments_list
 
 
 class TestGetAvailableConfigEnvList(TestCase):

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from configuration_py.configuration_py import _normalize_environment_label
+from configuration_py.configuration_load import _normalize_environment_label
 
 
 class TestNormalizeEnvironmentLabel(TestCase):

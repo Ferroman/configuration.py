@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from mock import patch
 
-from configuration_py.configuration_py import load
+from configuration_py.configuration_load import load
 
 
 # class TestGetAvailableConfigEnvList(TestCase):

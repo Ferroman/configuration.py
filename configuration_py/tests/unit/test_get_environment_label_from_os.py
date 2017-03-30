@@ -2,7 +2,7 @@ from unittest import TestCase
 
 import os
 
-from configuration_py.configuration_py import _get_environment_label_from_os
+from configuration_py.configuration_load import _get_environment_label_from_os
 
 
 class TestGetEnvironmentLabelFromOS(TestCase):

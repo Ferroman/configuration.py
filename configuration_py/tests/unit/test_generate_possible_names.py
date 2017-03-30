@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from configuration_py.configuration_py import _generate_possible_config_file_names
+from configuration_py.configuration_load import _generate_possible_config_file_names
 
 
 class TestGeneratePossibleNames(TestCase):

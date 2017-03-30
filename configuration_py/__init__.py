@@ -1,1 +1,1 @@
-from configuration_py import load
+from configuration_load import load
