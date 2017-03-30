@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 def readme():
@@ -13,7 +13,7 @@ def readme():
     return description
 
 setup(name='configuration.py',
-      version='0.8.2',
+      version='0.8.3',
       description='Easy config management for python applications',
       long_description=readme(),
       classifiers=[
@@ -26,7 +26,7 @@ setup(name='configuration.py',
       author='Frankovskyi Bogdan',
       author_email='bfrankovskyi@gmail.com',
       license='MIT',
-      packages=['configuration_py'],
+      packages=['configuration_py', 'configuration_py.parsers'],
       install_requires=['pyyaml',],
       test_suite='nose.collector',
       tests_require=['nose', 'mock', 'coverage'],
