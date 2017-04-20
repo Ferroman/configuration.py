@@ -352,6 +352,7 @@ To run tests install all of this tools and use appropriate CLI:
 Optionally it's possible to install dependencies and run tests via Makefile:
  
 > make deps-test
+
 > make test 
 
 For a full list of commands check
