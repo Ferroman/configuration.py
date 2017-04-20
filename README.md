@@ -1,5 +1,7 @@
 [![CodeClimate](http://img.shields.io/codeclimate/github/akozl/configuration.py.svg?style=flat)](https://codeclimate.com/github/akozl/configuration.py 
 "CodeClimate")
+[![CircleCI](https://img.shields.io/circleci/project/github/akozl/configuration.py/master.svg?style=flat)](https://img.shields.io/circleci/project/github/akozl/configuration.py/master.svg
+"CircleCI")
 
 # configuration.py: easy and flexible configuration management for python applications
 
