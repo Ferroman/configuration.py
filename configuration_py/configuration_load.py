@@ -119,7 +119,7 @@ def _load_config_by_name(configuration, config_folder, context):
     return _load_config_from_file(path_to_config_file, context)
 
 
-def load(configuration='application', environment=None, folder=None, context={}):
+def load(configuration='application', environment=None, folder=None, context=None):
     """
     :param configuration: name of configuration file to load. Could use names without extensions
     :param environment: environment, that should be load from config file. 'production', for example
