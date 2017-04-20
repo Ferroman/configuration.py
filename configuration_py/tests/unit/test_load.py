@@ -1,8 +1,8 @@
-from unittest import TestCase
-
-from mock import patch
-
-from configuration_py.configuration_load import load
+# from unittest import TestCase
+#
+# from mock import patch
+#
+# from configuration_py.configuration_load import load
 
 # class TestGetAvailableConfigEnvList(TestCase):
 # @patch('configuration_py.configuration_py._normalize_environment_label', return_value={'test': ''})
