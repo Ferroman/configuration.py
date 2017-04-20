@@ -1,9 +1,10 @@
 [![CodeClimate](http://img.shields.io/codeclimate/github/akozl/configuration.py.svg?style=flat)](https://codeclimate.com/github/akozl/configuration.py 
 "CodeClimate")
-[![CircleCI](https://img.shields.io/circleci/project/github/akozl/configuration.py/master.svg?style=flat)](https://img.shields.io/circleci/project/github/akozl/configuration.py/master.svg
+[![CircleCI](https://img.shields.io/circleci/project/github/akozl/configuration.py/master.svg?style=flat)](https://https://circleci.com/gh/akozl/configuration.py
 "CircleCI")
-[![Codecov](https://img.shields.io/codecov/c/github/akozl/configuration.py.svg)](https://img.shields.io/codecov/c/github/akozl/configuration.py.svg)
-[![PyPI](https://img.shields.io/pypi/pyversions/configuration.py.svg)](https://img.shields.io/pypi/pyversions/configuration.py.svg)
+[![Codecov](https://img.shields.io/codecov/c/github/akozl/configuration.py.svg)](https://codecov.io/gh/akozl/configuration.py)
+[![PyPI](https://img.shields.io/pypi/pyversions/configuration.py.svg)](https://pypi.python.org/pypi/configuration.py)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/akozl/configuration.py/blob/master/LICENSE)
 
 # configuration.py: easy and flexible configuration management for python applications
 
