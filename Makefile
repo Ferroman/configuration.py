@@ -14,7 +14,7 @@ quality: quality-py ## Run code quality checks
 
 quality-py:
 	pep8 . --format=pylint --max-line-length=140 --exclude=*/migrations/* --ignore=E121,E123,E126,E226,E24,E704,E402,W292
-	pylint -f colorized central
+	pylint -f colorized
 
 deps-test: ## Install dependencies required to run tests
 	pip install -r test_requirements.txt
