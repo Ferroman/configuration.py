@@ -22,7 +22,7 @@ deps-test: ## Install dependencies required to run tests
 complexity: ## Run code complexity checks
 	xenon . -bB -mA -aA
 
-reports: complexity-report test-report coverage-report
+reports: complexity-report tests-report coverage-report
 
 tests-report:
 	cp nosetests.xml $(CIRCLE_TEST_REPORTS)/nosetests/

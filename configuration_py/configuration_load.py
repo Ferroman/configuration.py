@@ -14,10 +14,11 @@ def _generate_possible_config_file_names(config_name):
         yield "{config_name}.{config_extension}".format(config_name=config_name, config_extension=config_extension)
 
         for parser_extension in supported_parser_extensions:
-            yield "{config_name}.{config_extension}.{parser_extension}" \
-                .format(config_name=config_name,
-                        config_extension=config_extension,
-                        parser_extension=parser_extension)
+            yield "{config_name}.{config_extension}.{parser_extension}".format(
+                config_name=config_name,
+                config_extension=config_extension,
+                parser_extension=parser_extension
+            )
 
 
 def _generate_possible_paths_to_config(config_name, config_folder):
@@ -38,8 +39,9 @@ def _get_path_to_config_file(config_name, config_folder):
     existed_paths = list(_find_existing_config_file(config_name, config_folder))
 
     if len(existed_paths) == 0:
-        raise IOError("No any of config files for '{file_names}' found in '{config_folder}' folder" \
-                      .format(file_names=config_name, config_folder=config_folder))
+        raise IOError("No any of config files for '{file_names}' found in '{config_folder}' folder".format(
+            file_names=config_name, config_folder=config_folder)
+        )
     if len(existed_paths) > 1:
         raise EnvironmentError(
             "Found more than one config file for '{config_name}' found in '{config_folder}': {existed_paths}".format(
@@ -62,9 +64,9 @@ def _get_environment_label_from_os(available_config_environments):
     if environment_value:
         return environment_value.lower()
     else:
-        raise EnvironmentError("Current environment for application does not set. To set environment, set one of the " \
-                               "available environments ({available_environments}) to ENV or ENVIRONMENT system " \
-                               "variable or provide it directly to the 'load' function." \
+        raise EnvironmentError("Current environment for application does not set. To set environment, set one of the "
+                               "available environments ({available_environments}) to ENV or ENVIRONMENT system "
+                               "variable or provide it directly to the 'load' function."
                                .format(available_environments=available_config_environments))
 
 
@@ -76,8 +78,8 @@ def _normalize_environment_label(label, available_config_environments):
         label = 'production'
 
     if label not in available_config_environments:
-        raise EnvironmentError("There is no configuration for given environment '{label}'. Please, provide " \
-                               "configuration section for this environment in config file " \
+        raise EnvironmentError("There is no configuration for given environment '{label}'. Please, provide "
+                               "configuration section for this environment in config file "
                                .format(label=label))
 
     return label
