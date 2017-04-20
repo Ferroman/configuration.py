@@ -53,8 +53,8 @@ def _get_path_to_config_file(config_name, config_folder):
 
 
 def _read_config_file(path_to_file):
-    with open(path_to_file) as f:
-        file_content = f.read()
+    with open(path_to_file) as config:
+        file_content = config.read()
     return file_content
 
 
