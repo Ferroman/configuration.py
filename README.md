@@ -1,3 +1,6 @@
+[![CodeClimate](http://img.shields.io/codeclimate/github/akozl/configuration.py.svg?style=flat)](https://codeclimate.com/github/akozl/configuration.py 
+"CodeClimate")
+
 # configuration.py: easy and flexible configuration management for python applications
 
 Configuration.py is a library for configuration management in python apps. Its goal is to make configurations management
