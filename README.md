@@ -4,7 +4,7 @@
 "CircleCI")
 [![Codecov](https://img.shields.io/codecov/c/github/akozl/configuration.py.svg)](https://codecov.io/gh/akozl/configuration.py)
 [![PyPI](https://img.shields.io/pypi/pyversions/configuration.py.svg)](https://pypi.python.org/pypi/configuration.py)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/akozl/configuration.py/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Ferroman/configuration.py/blob/master/LICENSE)
 
 # configuration.py: easy and flexible configuration management for python applications
 
