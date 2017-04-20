@@ -1,6 +1,5 @@
-from string import Template
-
 import os
+import string
 
 from configuration_py.parsers.base_parser import BaseConfigParser
 
@@ -11,7 +10,7 @@ class ConfigStringTemplateProcessor(BaseConfigParser):
     def parse(self, file_content, context=None):
         context = dict(context or {}, **os.environ)
         try:
-            return Template(file_content).substitute(context)
+            return string.Template(file_content).substitute(context)
         except KeyError, exc:
             raise EnvironmentError(
                 'Config try to use {exc} variable which does not exists. Pass variable to load context '
