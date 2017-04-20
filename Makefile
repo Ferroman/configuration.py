@@ -25,8 +25,10 @@ complexity: ## Run code complexity checks
 reports: complexity-report tests-report coverage-report
 
 tests-report:
+	mkdir $(CIRCLE_TEST_REPORTS)/nosetests
+	mkdir $(CIRCLE_TEST_REPORTS)/behave
 	cp nosetests.xml $(CIRCLE_TEST_REPORTS)/nosetests/
-	cp -r reports $(CIRCLE_TEST_REPORTS)/behave/
+	cp -r reports/. $(CIRCLE_TEST_REPORTS)/behave/
 
 complexity-report: ## Generate code complexity reports
 	radon cc . -s
