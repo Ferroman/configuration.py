@@ -8,8 +8,8 @@ from configuration_py.parsers.base_parser import BaseConfigParser
 class ConfigStringTemplateProcessor(BaseConfigParser):
     extensions = 'tmpl', 'strtmpl'
 
-    def parse(self, file_content, context={}):
-        context.update(os.environ)
+    def parse(self, file_content, context=None):
+        context = dict(context or {}, **os.environ)
         try:
             return Template(file_content).substitute(context)
         except KeyError, exc:

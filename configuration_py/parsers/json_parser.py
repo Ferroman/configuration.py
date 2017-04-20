@@ -7,7 +7,7 @@ class JSONParser(BaseConfigParser):
 
     extensions = ('json', )
 
-    def parse(self, file_content, context={}):
+    def parse(self, file_content, context=None):
         config_dict = json.loads(file_content)
 
         if not config_dict or not isinstance(config_dict, dict):
