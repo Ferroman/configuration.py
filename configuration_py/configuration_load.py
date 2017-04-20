@@ -14,7 +14,7 @@ def _generate_possible_config_file_names(config_name):
         yield "{config_name}.{config_extension}".format(config_name=config_name, config_extension=config_extension)
 
         for parser_extension in supported_parser_extensions:
-            yield "{config_name}.{config_extension}.{parser_extension}"\
+            yield "{config_name}.{config_extension}.{parser_extension}" \
                 .format(config_name=config_name,
                         config_extension=config_extension,
                         parser_extension=parser_extension)

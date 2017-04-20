@@ -9,7 +9,7 @@ class TestFindParserClassByExtension(TestCase):
     @patch('configuration_py.parser_lookup._lookup_for_available_parsers')
     def test_should_return_parser_class_when_extension_supported(self, mock):
         parser_class_mock = MagicMock()
-        parser_class_mock.extensions = ('yaml', )
+        parser_class_mock.extensions = ('yaml',)
         mock.return_value = [parser_class_mock]
 
         expected_value = parser_class_mock
@@ -19,7 +19,7 @@ class TestFindParserClassByExtension(TestCase):
     @patch('configuration_py.parser_lookup._lookup_for_available_parsers')
     def test_should_raise_exceptions_when_parsers_class_support_extension(self, mock):
         parser_class_mock = MagicMock()
-        parser_class_mock.extensions = ('yaml', )
+        parser_class_mock.extensions = ('yaml',)
         mock.return_value = [parser_class_mock]
 
         self.assertRaises(EnvironmentError, _find_parser_class_by_extension, 'json')
