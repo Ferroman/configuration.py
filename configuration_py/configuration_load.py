@@ -40,8 +40,7 @@ def _get_path_to_config_file(config_name, config_folder):
 
     if len(existed_paths) == 0:
         raise IOError("No any of config files for '{file_names}' found in '{config_folder}' folder".format(
-            file_names=config_name, config_folder=config_folder)
-        )
+            file_names=config_name, config_folder=config_folder))
     if len(existed_paths) > 1:
         raise EnvironmentError(
             "Found more than one config file for '{config_name}' found in '{config_folder}': {existed_paths}".format(
