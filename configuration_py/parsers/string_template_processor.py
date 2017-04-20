@@ -12,7 +12,7 @@ class ConfigStringTemplateProcessor(BaseConfigParser):
         context.update(os.environ)
         try:
             return Template(file_content).substitute(context)
-        except KeyError, e:
+        except KeyError, exc:
             raise EnvironmentError(
-                'Config try to use {e} variable which does not exists. Pass variable to load context '
-                'or set it to the environment.'.format(e=e))
+                'Config try to use {exc} variable which does not exists. Pass variable to load context '
+                'or set it to the environment.'.format(exc=exc))
