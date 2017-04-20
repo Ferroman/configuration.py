@@ -348,6 +348,15 @@ To run tests install all of this tools and use appropriate CLI:
 
 > behave ./configuration_py/tests/acceptance/
 
+Optionally it's possible to install dependencies and run tests via Makefile:
+ 
+> make deps-test
+> make test 
+
+For a full list of commands check
+
+> make help
+
 ## License
 
 [MIT](https://github.com/Ferroman/configuration.py/blob/master/LICENSE) © Bogdan Frankovskyi

@@ -1,13 +1,13 @@
 all: quality complexity test complexity-report coverage-report
 
-test: test-py # Run tests
+test: test-py ## Run tests
 
-test-py: unittests acceptance-tests ## Run Python tests
+test-py: unittests acceptance-tests ## Run all Python tests
 
-unittests:
+unittests: ## Run unit tests with coverage
 	python setup.py nosetests --with-xunit --with-coverage --cover-package=configuration_py --cover-inclusive
 
-acceptance-tests:
+acceptance-tests: ## Run acceptance tests with coverage
 	coverage run -a --source='configuration_py' -m behave --tags=~@skip --format=progress3 --junit ./configuration_py/tests/acceptance/
 
 quality: quality-py ## Run code quality checks
