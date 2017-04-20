@@ -20,11 +20,11 @@ deps-test: ## Install dependencies required to run tests
 	pip install -r test_requirements.txt
 
 complexity: ## Run code complexity checks
-	xenon . -bA -mA -aA
+	xenon . -bB -mA -aA
 
-reports: complexity-reports test-reports coverage-reports
+reports: complexity-report test-report coverage-report
 
-tests-reports:
+tests-report:
 	cp nosetests.xml $(CIRCLE_TEST_REPORTS)/nosetests/
 	cp -r reports $(CIRCLE_TEST_REPORTS)/behave/
 
