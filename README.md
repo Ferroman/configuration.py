@@ -1,6 +1,6 @@
 [![CodeClimate](http://img.shields.io/codeclimate/github/Ferroman/configuration.py.svg?style=flat)](https://codeclimate.com/github/Ferroman/configuration.py 
 "CodeClimate")
-[![CircleCI](https://img.shields.io/circleci/project/github/Ferroman/configuration.py/master.svg?style=flat)](https://https://circleci.com/gh/Ferroman/configuration.py
+[![CircleCI](https://img.shields.io/circleci/project/github/Ferroman/configuration.py/master.svg?style=flat)](https://circleci.com/gh/Ferroman/configuration.py
 "CircleCI")
 [![Codecov](https://img.shields.io/codecov/c/github/Ferroman/configuration.py.svg)](https://codecov.io/gh/Ferroman/configuration.py)
 [![PyPI](https://img.shields.io/pypi/pyversions/configuration.py.svg)](https://pypi.python.org/pypi/configuration.py)
