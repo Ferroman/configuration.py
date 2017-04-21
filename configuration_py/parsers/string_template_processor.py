@@ -1,19 +1,17 @@
-from string import Template
-
 import os
+import string
 
 from configuration_py.parsers.base_parser import BaseConfigParser
 
 
 class ConfigStringTemplateProcessor(BaseConfigParser):
-
     extensions = 'tmpl', 'strtmpl'
 
-    def parse(self, file_content, context={}):
-        context.update(os.environ)
+    def parse(self, file_content, context=None):
+        context = dict(context or {}, **os.environ)
         try:
-            return Template(file_content).substitute(context)
-        except KeyError, e:
+            return string.Template(file_content).substitute(context)
+        except KeyError, exc:
             raise EnvironmentError(
-                'Config try to use {e} variable which does not exists. Pass variable to load context '
-                'or set it to the environment.'.format(e=e))
+                'Config try to use {exc} variable which does not exists. Pass variable to load context '
+                'or set it to the environment.'.format(exc=exc))

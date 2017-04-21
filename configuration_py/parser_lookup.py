@@ -38,7 +38,7 @@ def _lookup_for_available_parsers():
         full_package_name = '%s.%s' % (parsers_folder, package_name)
         if full_package_name not in sys.modules:
             module = importer.find_module(package_name).load_module(package_name)
-            for name, obj in inspect.getmembers(module):
+            for _, obj in inspect.getmembers(module):
                 if inspect.isclass(obj) and issubclass(obj, BaseConfigParser) and obj is not BaseConfigParser:
                     yield obj
 

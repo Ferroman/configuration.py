@@ -1,0 +1,6 @@
+behave
+sure
+xenon # Complexity measurement tool, includes radon
+pylint==1.6.5 # 1.7 has an open issue
+pep8
+codecov

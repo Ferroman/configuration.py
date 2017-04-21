@@ -1,3 +1,11 @@
+[![CodeClimate](http://img.shields.io/codeclimate/github/akozl/configuration.py.svg?style=flat)](https://codeclimate.com/github/akozl/configuration.py 
+"CodeClimate")
+[![CircleCI](https://img.shields.io/circleci/project/github/akozl/configuration.py/master.svg?style=flat)](https://https://circleci.com/gh/akozl/configuration.py
+"CircleCI")
+[![Codecov](https://img.shields.io/codecov/c/github/akozl/configuration.py.svg)](https://codecov.io/gh/akozl/configuration.py)
+[![PyPI](https://img.shields.io/pypi/pyversions/configuration.py.svg)](https://pypi.python.org/pypi/configuration.py)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Ferroman/configuration.py/blob/master/LICENSE)
+
 # configuration.py: easy and flexible configuration management for python applications
 
 Configuration.py is a library for configuration management in python apps. Its goal is to make configurations management
@@ -340,6 +348,16 @@ To run tests install all of this tools and use appropriate CLI:
 > nosetests --with-coverage --cover-package=configuration_py
 
 > behave ./configuration_py/tests/acceptance/
+
+Optionally it's possible to install dependencies and run tests via Makefile:
+ 
+> make deps-test
+
+> make test 
+
+For a full list of commands check
+
+> make help
 
 ## License
 
