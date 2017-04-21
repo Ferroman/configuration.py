@@ -327,6 +327,9 @@ test:
 >>> client = MongoClient(**load()['mongo'])
 ```
 
+## Contributors
+
+1. [Andrei Kozlovskyi](https://github.com/akozl)
 
 ## Contributing
 
